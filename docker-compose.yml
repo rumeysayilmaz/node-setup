@@ -1,0 +1,29 @@
+version: '3.3'
+services:
+  chain:
+    container_name: mcl_node
+    build:
+      context: ./dockerfiles
+      dockerfile: mcl.Dockerfile
+    volumes:
+      - ./chainfiles_mcl:/root/.komodo/MCL/
+      - ./zcashparams:/root/.zcash-params
+    ports:
+      - "49155:22"
+    entrypoint: bash -c "/root/run_mcl"
+    restart: always
+  
+  # chain_2:
+  #   container_name: mcl_node_2
+  #   build:
+  #     context: ./dockerfiles
+  #     dockerfile: mcl.Dockerfile
+  #   volumes:
+  #     - ./chainfiles_mcl_2:/root/.komodo/MCL/
+  #     - ./zcashparams:/root/.zcash-params
+  #   ports:
+  #     - "49155:22"
+  #   entrypoint: bash -c "/root/run_mcl"
+  #   restart: always
+    
+
