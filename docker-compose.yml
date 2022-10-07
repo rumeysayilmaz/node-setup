@@ -10,7 +10,6 @@ services:
       - ./zcashparams:/root/.zcash-params
     ports:
       - "49155:22"
-    entrypoint: bash -c "/root/run_mcl"
     restart: always
   
   # chain_2:
@@ -23,7 +22,4 @@ services:
   #     - ./zcashparams:/root/.zcash-params
   #   ports:
   #     - "49155:22"
-  #   entrypoint: bash -c "/root/run_mcl"
-  #   restart: always
-    
 
