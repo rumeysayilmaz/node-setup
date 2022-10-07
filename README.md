@@ -10,3 +10,47 @@ This project can be run on a local machine or deployed to a cloud server.
 
 ## Library dependencies
 
+**OS Version:** Ubuntu 20.04
+
+Make updates to the OS:
+
+`sudo apt-get update && sudo apt-get upgrade -y`
+
+Install docker compose with the following command:
+
+`sudo apt-get install docker-compose`
+
+Verify the installed version:
+
+`docker-compose --version`
+
+Clone the repository:
+
+`git clone https://github.com/rumeysayilmaz/node-setup.git`
+
+`cd node-setup`
+
+To build the services, run the following command:
+
+`docker-compose up --build`
+
+
+To run containers in the background in detached mode:
+
+`docker-compose up -d`
+
+
+The password inside `mcl.Dockerfile` has to be changed for security reasons. 
+Either change it before building the docker service or change the password using the following commands:
+
+Make ssh connection with the respective port number:
+
+`ssh root@127.0.0.1 -p 49155`
+
+Change the password:
+
+`passwd`
+
+To start the daemon:
+
+`./run_mcl`
