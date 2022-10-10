@@ -39,17 +39,11 @@ To run containers in the background in detached mode:
 
 `docker-compose up -d`
 
+If you wish to make a direct connection to the container, then place the ip address of your remote host on the `youripaddress` below:
 
-The password inside `mcl.Dockerfile` has to be changed for security reasons. 
-Either change it before building the docker service or change the password using the following commands:
+From shell, to make an ssh connection with the respective port number (the port number in the `docker-compose.yml` file):
 
-Make ssh connection with the respective port number:
-
-`ssh root@127.0.0.1 -p 49155`
-
-Change the password:
-
-`passwd`
+`ssh root@youripaddress -p 49155`
 
 To start the daemon:
 
