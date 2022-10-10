@@ -32,7 +32,7 @@ Clone the repository:
 
 To build the services, run the following command:
 
-`docker-compose up --build`
+`docker-compose build`
 
 
 To run containers in the background in detached mode:

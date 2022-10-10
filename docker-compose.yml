@@ -5,11 +5,14 @@ services:
     build:
       context: ./dockerfiles
       dockerfile: mcl.Dockerfile
+      args:
+      - PW=12345 #  Before building the docker service, change the following password for security reasons
+      - CHAINLINK=https://github.com/marmarachain/marmara/releases/download/v1.1.6/MCL-linux.zip
     volumes:
       - ./chainfiles_mcl:/root/.komodo/MCL/
       - ./zcashparams:/root/.zcash-params
     ports:
-      - "49155:22"
+      - "49155:22"  # Change the host port as you wish >> host:continer
     restart: always
   
   # chain_2:
@@ -17,9 +20,11 @@ services:
   #   build:
   #     context: ./dockerfiles
   #     dockerfile: mcl.Dockerfile
+  #     args:
+  #     - PW=securepw #  Before building the docker service, change the following password for security reasons
   #   volumes:
   #     - ./chainfiles_mcl_2:/root/.komodo/MCL/
   #     - ./zcashparams:/root/.zcash-params
   #   ports:
-  #     - "49155:22"
+  #     - "491556:22" # Change the host port as you wish >> host:continer
 
