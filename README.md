@@ -30,6 +30,10 @@ Clone the repository:
 
 `cd node-setup`
 
+Before building the docker service, change the corresponding values of `PW` and `ports` for security reasons and save the file.
+
+`sudo nano docker-compose.yml`
+
 To build the services, run the following command:
 
 `docker-compose build`
